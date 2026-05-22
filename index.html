@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kern Group LLC - Premium Co-Living in Dallas-Fort Worth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            background: #f9fafb;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .locations {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .locations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .location-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .location-card:hover {
+            transform: scale(1.05);
+        }
+
+        .location-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-choose {
+            padding: 5rem 2rem;
+            background: #f9fafb;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: #f59e0b;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+                margin-left: 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🏠 Kern Group LLC</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#locations">Locations</a>
+                <a href="#why-choose">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Your Modern Co-Living Community Awaits</h1>
+            <p>Premium co-living spaces in Dallas-Fort Worth designed for professionals seeking affordability, community, and convenience</p>
+            <button class="cta-button">Explore Our Homes</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">What Makes Us Different</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏙️</div>
+                    <h3>Prime DFW Locations</h3>
+                    <p>Located in the heart of Dallas-Fort Worth with easy access to major employment hubs, entertainment, and dining</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Up to 40% more affordable than traditional apartments with all-inclusive pricing - utilities, furniture, and WiFi included</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Focused</h3>
+                    <p>Weekly events, co-working spaces, and social gatherings designed to build lasting friendships and professional networks</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛋️</div>
+                    <h3>Fully Furnished</h3>
+                    <p>Move in ready with modern furniture, high-speed internet, and access to shared amenities</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Security & Safety</h3>
+                    <p>24/7 security, smart locks, and controlled access ensure your peace of mind</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Flexible Leases</h3>
+                    <p>No long-term commitments - choose lease terms from 3 months to 2 years based on your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="locations-container">
+            <h2 class="section-title">Our DFW Properties</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>🏢 Uptown Dallas</h3>
+                    <p>Urban living at its finest with walkable streets, trendy restaurants, and vibrant nightlife</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Starting at $900/month</p>
+                </div>
+                <div class="location-card">
+                    <h3>🌳 Arlington</h3>
+                    <p>Vibrant entertainment district close to sports venues, shopping, and dining destinations</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Starting at $850/month</p>
+                </div>
+                <div class="location-card">
+                    <h3>💼 Fort Worth Downtown</h3>
+                    <p>Historic charm meets modern amenities in the cultural heart of the metroplex</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Starting at $800/month</p>
+                </div>
+                <div class="location-card">
+                    <h3>📍 Plano Tech District</h3>
+                    <p>Perfect for tech professionals with proximity to major corporate headquarters</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Starting at $900/month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-choose">
+        <div class="why-choose-container">
+            <h2 class="section-title">Why Choose Kern Group LLC</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>Expert Property Management</h4>
+                        <p>10+ years of experience in DFW real estate and community building</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>All-Inclusive Pricing</h4>
+                        <p>No hidden fees - utilities, WiFi, furniture all included</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>Vetted Community Members</h4>
+                        <p>Carefully screened residents ensure a safe and welcoming environment</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>24/7 Support</h4>
+                        <p>Dedicated team ready to help with maintenance and any concerns</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>Professional Cleaning</h4>
+                        <p>Common areas professionally maintained weekly</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-content">
+                        <h4>Community Events</h4>
+                        <p>Regular networking, social, and wellness activities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title">What Our Residents Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I moved to the Uptown Dallas property and found an amazing community. The pricing is unbeatable and everyone here is so welcoming. I feel like I've found my home!"</p>
+                    <p class="testimonial-author">- Sarah M., Marketing Professional</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The all-inclusive pricing saved me so much money. Plus, being part of this community has expanded my professional network significantly. Highly recommend!"</p>
+                    <p class="testimonial-author">- James T., Software Engineer</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Kern Group made the move to Dallas incredibly easy. The flexible lease terms were perfect for my situation, and the support team is fantastic."</p>
+                    <p class="testimonial-author">- Emily R., Finance Analyst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Ready to Join Our Community?</h2>
+            <p>Let's find the perfect co-living space for you in the Dallas-Fort Worth area</p>
+            <button class="cta-button">Schedule a Tour Today</button>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📞 Phone</h4>
+                    <p>(214) 555-0123</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p>info@kerngroupllc.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Service Area</h4>
+                    <p>Dallas-Fort Worth Metroplex</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kern Group LLC. All rights reserved. | Premium Co-Living Solutions for DFW</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // CTA button animations
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Thank you for your interest! Please contact us at (214) 555-0123 or info@kerngroupllc.com to schedule a tour.');
+            });
+        });
+    </script>
+</body>
+</html>
